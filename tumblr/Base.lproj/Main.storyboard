@@ -32,12 +32,13 @@
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1qP-VL-hlk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BTZ-yZ-fyg">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BTZ-yZ-fyg">
                                         <frame key="frameInset" minX="135" minY="4" width="104" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
                                         <connections>
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1O-S4-gcV"/>
+                                            <segue destination="IYF-dX-6iO" kind="modal" animates="NO" id="maz-3b-1KT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1yB-lI-Ilo">
@@ -100,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="home" id="7ct-mi-kga">
-                                <frame key="frameInset" width="375" height="667"/>
+                                <frame key="frameInset" width="375" height="626"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="home_spinner" id="GyO-o3-UJx">
@@ -128,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="search_feed" id="58d-Mp-fhD">
-                                <frame key="frameInset" minX="-1" width="376" height="667"/>
+                                <frame key="frameInset" minX="-1" width="376" height="629"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -153,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="account" id="Uhx-1h-3q3">
-                                <frame key="frameInset" width="375" height="667"/>
+                                <frame key="frameInset" width="375" height="626"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -199,7 +200,7 @@
         <!--Compose View Controller-->
         <scene sceneID="Xgg-Sq-YVm">
             <objects>
-                <viewController storyboardIdentifier="ComposeViewController" id="IYF-dX-6iO" customClass="ComposeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeViewController" modalPresentationStyle="overCurrentContext" id="IYF-dX-6iO" customClass="ComposeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xxk-NL-pvy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,11 +220,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="link_icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cfa-8k-MPc">
-                                <frame key="frameInset" minX="118" minY="309" width="129" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="chat_icon"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="P7v-PV-8NQ">
                                 <frame key="frameInset" minX="232" minY="309" width="129" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -241,10 +237,26 @@
                                 <state key="normal" title="Nevermind">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressDismiss:" destination="IYF-dX-6iO" eventType="touchUpInside" id="6ot-BY-OQW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cfa-8k-MPc">
+                                <frame key="frameInset" minX="118" minY="309" width="129" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="chat_icon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20923778414726257" green="0.27697259187698364" blue="0.36011314392089844" alpha="0.76273544520547942" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="cfa-8k-MPc" id="21N-8y-Jyp"/>
+                        <outlet property="linkButton" destination="bUQ-ab-jH1" id="sHo-g0-vtL"/>
+                        <outlet property="photoButton" destination="xfS-0s-qJg" id="8NE-1w-hVB"/>
+                        <outlet property="quoteButton" destination="yUo-vT-EzI" id="7vB-z7-cXs"/>
+                        <outlet property="textButton" destination="tgC-2b-tJW" id="Z65-4S-9kF"/>
+                        <outlet property="videoButton" destination="P7v-PV-8NQ" id="f2c-yf-XbR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EV2-5C-bHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,7 +34,7 @@ class TabBarViewController: UIViewController {
         trendingViewController = main.instantiateViewController(withIdentifier:"TrendingViewController")
         
         viewControllers = [homeViewController, searchViewController,composeViewController, accountViewController, trendingViewController]
-    
+        
         
         buttons[selectedIndex].isSelected = true
         didPressTab(buttons[selectedIndex])
