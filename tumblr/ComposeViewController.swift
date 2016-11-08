@@ -10,6 +10,7 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var textIconView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

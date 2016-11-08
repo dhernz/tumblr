@@ -10,10 +10,14 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+           scrollView.contentSize = imageView.frame.size
+       
     }
 
     override func didReceiveMemoryWarning() {
